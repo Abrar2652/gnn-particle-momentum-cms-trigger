@@ -52,40 +52,12 @@ pip install -r requirements.txt
 
 ---
 
-## Usage
-
-### Using Bending Angle as Node Feature
-
-```bash
-python main.py --input_csv "/path/to/CMS_trigger.csv" \
-               --batch_size 32 \
-               --learning_rate 0.001 \
-               --node_feat "bendAngle" \
-               --epochs 18 \
-               --save_dir "./outputs"
-```
-
-### Using Eta Value as Node Feature
-
-```bash
-python main.py --input_csv "/path/to/CMS_trigger.csv" \
-               --batch_size 32 \
-               --learning_rate 0.001 \
-               --node_feat "etaValue" \
-               --epochs 18 \
-               --save_dir "./outputs"
-```
-
----
-
 ## Datasets
 
 The dataset contains **1,179,356 muon events** generated using **Pythia**, available on [Kaggle](https://www.kaggle.com/datasets/ekurtoglu/cms-dataset).
 
 
 ## Graph Construction Strategies
-
-[Graph Dataset Creation](https://github.com/[username]/gnn-particle-momentum-cms-trigger/blob/main/Graph_creation)
 
 - [x] **Each station as a node :** 
 - [x] **Each feature as a node :**
@@ -115,9 +87,7 @@ In this approach, each of the 7 features (across all stations) is treated as a n
 
 ### 3. Bending Angle as a Node
 
-Although the above two methods produced good results in terms of MSE/MAE, we found that the number of parameters in the GNN was nearly 10× higher than our baseline model (TabNet).
-
-This led us to perform extensive feature engineering, and we made the following observations:
+In this approach:
 
 - **Dropped Features**:  
   Mask values, frontValue, time info, ring number, and front/rear hit features were nearly constant across particles and contributed very little to momentum prediction.  
