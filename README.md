@@ -132,8 +132,6 @@ After refining our feature set, we constructed a new graph:
 - **Edge features**: `sin(ϕ)`, `cos(ϕ)`, and `η`  
 - **Graph type**: Fully connected graph
 
-![image](https://github.com/user-attachments/assets/84e22d1b-254e-4ac1-a986-0225deb06888)
-
 ---
 
 ### 4. Eta Value as a Node
